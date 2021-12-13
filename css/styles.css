@@ -1,0 +1,100 @@
+.nav1 {
+    height: 50px;
+    width: auto;
+    text-align:center;
+    border-top: black;
+    border-bottom: black;
+    border-right: white;
+    border-left: white;
+    border-style:solid;
+    border-width: 2px;
+    background-color: beige;
+    margin-top: -15px;
+}
+
+#li {
+    display: inline;
+}
+
+li:hover {
+    background-color:grey;
+}
+
+.img {
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+}
+
+#bio:first-line
+{
+   font-weight: bold;
+}
+
+#bio:first-letter
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.footer
+{
+    font-size: 10px;
+}
+
+.formdiv {
+    text-align: center;
+    background-color: teal;
+    color: white;
+}
+
+input {
+    border-color:pink;
+}
+
+.contactfooter {
+   text-align: center;
+}
+
+img {
+    width:100px;
+}
+
+.containerdiv {
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    max-width: 800px;
+    border-color: black;
+    z-index: 1;
+    margin-top: 5%;
+}
+
+.box {
+    border: 1px solid silver;
+    height: 200px;
+    margin: 30px 0;
+    width: 200px; 
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+}
+
+.body {
+    background-color: teal;
+    color: beige;
+}
+
+p {
+    text-align: center;
+}
+
+h1, h2 {
+    text-align: center;
+}

@@ -1,0 +1,91 @@
+var count = 0;
+var boxes = document.querySelectorAll('.box');
+var userPlay = 'X';
+var gameFinished = false;
+var message = document.getElementById('userMessage');
+
+beginGame();
+
+// Function that checks if there is a full row
+function fullRow(q, r, s, t, u, v) {
+    if ((q.length == 1) && (q == r) && (r == s)) {
+        gameFinished = true; 
+        
+        document.getElementById(t).style.color = '#115C44;';
+        document.getElementById(u).style.color = '#115C44;';
+        document.getElementById(v).style.color = '#115C44;';
+
+        message.innerHTML = s + "wins";
+    }
+}
+
+// After 5 moves, function checks if there are 3 in a row
+function winnerCheck() {
+    if (count >= 5) {
+        fullRow(boxes[0].innerHTML, boxes[4].innerHTML, boxes[8].innerHTML, boxes[0].id, boxes[4].id, boxes[8].id);
+        fullRow(boxes[0].innerHTML, boxes[3].innerHTML, boxes[6].innerHTML, boxes[0].id, boxes[3].id, boxes[6].id);
+        fullRow(boxes[0].innerHTML, boxes[1].innerHTML, boxes[2].innerHTML, boxes[0].id, boxes[1].id, boxes[2].id);
+        fullRow(boxes[1].innerHTML, boxes[4].innerHTML, boxes[7].innerHTML, boxes[1].id, boxes[4].id, boxes[7].id);
+        fullRow(boxes[2].innerHTML, boxes[4].innerHTML, boxes[6].innerHTML, boxes[2].id, boxes[4].id, boxes[6].id);
+        fullRow(boxes[2].innerHTML, boxes[5].innerHTML, boxes[8].innerHTML, boxes[2].id, boxes[5].id, boxes[8].id);
+        fullRow(boxes[3].innerHTML, boxes[4].innerHTML, boxes[5].innerHTML, boxes[3].id, boxes[4].id, boxes[5].id);
+        fullRow(boxes[6].innerHTML, boxes[7].innerHTML, boxes[8].innerHTML, boxes[6].id, boxes[7].id, boxes[8].id);
+    }
+
+    else if ((count == 9) && gameFinished == false) {
+        // message.style.display = 'block';
+        message.innerHTML = 'This match was a draw!';
+    }
+}
+
+// starts the game when a user clicks
+function beginGame() {
+    for (x = 0; x < boxes.length; x++)
+        {
+            boxes[x].addEventListener('click', function(e){
+                play(e);
+            });
+
+        }
+}
+
+function play(e) {
+    //console.log(e.target);
+    // step 1: check if the space that has been clicked is taken
+    // if statement - if place is taken, then print error // if space is open (element is empty), then run play code
+    if(e.target.innerText == '') {
+        //console.log();
+        if (userPlay === 'X'){
+            e.target.innerText = 'X';
+            userPlay = 'O';
+        }
+        
+        else {
+            e.target.innerText = 'O'
+            userPlay = 'X'
+        }
+
+        ++count;
+        winnerCheck();
+    }
+}
+
+// the goal of this function is to reload the page
+//function reset() {
+    var resetbutton = document.getElementById('restart');
+    resetbutton.addEventListener('click', function() {
+        console.log('test');
+        location.reload();
+    });
+
+    
+    // if (resetbutton.addEventListener('click', function(e){
+    //     location.reload();
+    // })
+
+    // var resetbutton = document.getElementsById('resetButton');
+    // var reset = document.createElement('button');
+
+    // resetbutton.appendChild(reset); 
+
+

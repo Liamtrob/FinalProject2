@@ -1,0 +1,53 @@
+.maincontainer {
+    width: 450px;
+    height: 450px;
+    padding: 0;
+    display: block;
+    margin: auto;
+    background-color: green;
+    color: gold;
+}
+
+.box {
+    float: left;
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 4px solid black;
+    font-size: 2rem;
+    background-color: green;
+    text-align: center;
+    line-height: 20px;
+    padding-top: 60px;
+    color: gold;
+}
+
+#box4, #box7 {
+    clear: left;
+}
+
+body {
+    background-color: green;
+    text-align: center;
+    color: gold;
+    background-image: url('xmas.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    text-align: center;
+}
+
+#userMessage, #header{
+    background-color: green;
+    width: 250px;
+    margin: auto;
+}
+
+#xmas { 
+    background-color: green;
+    width: 480px; 
+    margin: auto;
+}
